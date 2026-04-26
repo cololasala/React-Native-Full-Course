@@ -7,25 +7,24 @@ import "../../global.css";
 
 const Index = () => {
   return (
-    <SafeAreaView className="flex-1 items-center justify-center bg-background">
-      <Text className="text-xl font-sans-bold text-accent">
-        Welcome to NativeWind!
-      </Text>
+    <SafeAreaView className="flex-1 p-5 bg-background">
+      <Text className="text-5xl font-sans-extrabold">Home</Text>
+
       <Link
         href={"/Onboarding"}
-        className="text-lg font-sans-regular text-primary"
+        className="mt-4 fonts-sans-bold rounded bg-primary text-white p-4"
       >
         Go to onboarding
       </Link>
       <Link
         href={"/(auth)/SignIn"}
-        className="text-lg font-sans-regular text-primary"
+        className="mt-4 fonts-sans-bold rounded bg-primary text-white p-4"
       >
         Go to SignIn
       </Link>
       <Link
         href={"/(auth)/SignUp"}
-        className="text-lg font-sans-regular text-primary"
+        className="mt-4 fonts-sans-bold rounded bg-primary text-white p-4"
       >
         Go to SignUp
       </Link>
