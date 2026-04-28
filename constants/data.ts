@@ -2,13 +2,13 @@ import { icons } from "./icons";
 
 export const tabs: AppTab[] = [
   { name: "index", title: "Home", icon: icons.home },
-  { name: "Subscriptions", title: "Subscriptions", icon: icons.wallet },
+  { name: "Subscriptions", title: "Subscriptions", icon: icons.wallet }, // El nombre de la pantalla debe ser el mismo que el de la ruta, en este caso Subscriptions
   { name: "Insights", title: "Insights", icon: icons.activity },
   { name: "Settings", title: "Settings", icon: icons.setting },
 ];
 
 export const HOME_USER = {
-  name: "Adrian | JS Mastery",
+  name: "Luciano | React Native Mastery",
 };
 
 export const HOME_BALANCE = {
