@@ -1,6 +1,10 @@
+import { ClerkProvider } from "@clerk/expo";
+import { tokenCache } from "@clerk/expo/token-cache";
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+
+SplashScreen.preventAutoHideAsync(); // Keep the splash screen visible while we fetch resources
 
 export default function RootLayout() {
   const [fontsLoaded] = useFonts({
@@ -22,7 +26,16 @@ export default function RootLayout() {
   if (!fontsLoaded) {
     return null;
   }
+
+  const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
+
+  if (!publishableKey) {
+    throw new Error("Add your Clerk Publishable Key to the .env file");
+  }
+
   return (
-    <Stack initialRouteName="(tabs)" screenOptions={{ headerShown: false }} />
+    <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
+      <Stack initialRouteName="(tabs)" screenOptions={{ headerShown: false }} />
+    </ClerkProvider>
   );
 }
