@@ -1,7 +1,7 @@
 import { ClerkProvider } from "@clerk/expo";
 import { tokenCache } from "@clerk/expo/token-cache";
 import { useFonts } from "expo-font";
-import { SplashScreen, Stack } from "expo-router";
+import { Slot, SplashScreen } from "expo-router";
 import React, { useEffect } from "react";
 
 SplashScreen.preventAutoHideAsync(); // Keep the splash screen visible while we fetch resources
@@ -35,7 +35,7 @@ export default function RootLayout() {
 
   return (
     <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
-      <Stack initialRouteName="(tabs)" screenOptions={{ headerShown: false }} />
+      <Slot initialRouteName="(tabs)" />
     </ClerkProvider>
   );
 }
